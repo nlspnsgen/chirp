@@ -23,8 +23,8 @@ module.exports = function(passport){
 			passReqToCallback : true
 		},
 		function(req, username, password, done) { 
-
-			if(users[username]){
+			//Check if user exists
+			if(!users[username]){
 				console.log('User Not Found with username '+username);
 				return done(null, false);
 			}
